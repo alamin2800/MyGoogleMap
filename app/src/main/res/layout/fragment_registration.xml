@@ -39,8 +39,7 @@
                 android:layout_marginTop="10dp"
                 android:layout_marginEnd="30dp"
                 android:background="@drawable/edit_text_background"
-                android:ems="10"
-                android:inputType="textPersonName"
+                android:textColor="@color/white"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/firstNameId"
                 tools:layout_editor_absoluteX="3dp"
@@ -52,7 +51,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="30dp"
                 android:layout_marginTop="10dp"
-                android:text="Lasr Name"
+                android:text="Last Name"
                 android:textColor="@color/white"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/firstNameEt"
@@ -67,6 +66,7 @@
                 android:layout_marginTop="10dp"
                 android:layout_marginEnd="30dp"
                 android:background="@drawable/edit_text_background"
+                android:textColor="@color/white"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/lasttNameId"
                 tools:layout_editor_absoluteX="3dp"
@@ -101,15 +101,18 @@
 
 
                 <EditText
+                    android:id="@+id/emailEt"
                     android:layout_width="0dp"
                     android:layout_height="35dp"
                     android:layout_weight="3"
-
-                    />
+                    android:background="@drawable/edit_text_background"
+                    android:textColor="@color/white" />
 
                 <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/otpCodeId"
                     android:layout_width="0dp"
                     android:layout_height="35dp"
+                    android:layout_marginBottom="2dp"
                     android:layout_weight="2"
                     android:background="@drawable/edit_text_background"
                     android:text="Send Code"
@@ -139,6 +142,7 @@
                 android:layout_marginTop="10dp"
                 android:layout_marginEnd="30dp"
                 android:background="@drawable/edit_text_background"
+                android:textColor="@color/white"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/verificationId"
                 tools:layout_editor_absoluteX="3dp"
@@ -167,6 +171,7 @@
                 android:layout_marginTop="10dp"
                 android:layout_marginEnd="30dp"
                 android:background="@drawable/edit_text_background"
+                android:textColor="@color/white"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/usernameId"
                 tools:layout_editor_absoluteX="3dp"
@@ -194,6 +199,7 @@
                 android:layout_marginTop="10dp"
                 android:layout_marginEnd="30dp"
                 android:background="@drawable/edit_text_background"
+                android:textColor="@color/white"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/passwordId"
                 tools:layout_editor_absoluteX="3dp"
@@ -222,6 +228,7 @@
                 android:layout_marginTop="10dp"
                 android:layout_marginEnd="30dp"
                 android:background="@drawable/edit_text_background"
+                android:textColor="@color/white"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/retypePasswordId"
                 tools:layout_editor_absoluteX="3dp"
@@ -264,15 +271,15 @@
             </LinearLayout>
 
             <Button
-                android:id="@+id/submitButtonId"
+                android:id="@+id/RegSubmitButtonId"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="30dp"
                 android:layout_marginTop="10dp"
                 android:layout_marginEnd="30dp"
-                android:text="Button"
-                app:layout_constraintStart_toStartOf="parent"
                 android:background="@drawable/edit_text_background"
+                android:text="Submit"
+                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/linearLayout" />
 
 
