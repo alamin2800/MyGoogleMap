@@ -39,9 +39,7 @@ class LoginFragment : Fragment() {
             val password = binding.passwordLoginEt.text.toString()
             viewModel.login(email, password)
         }
-
-
-
+        
 
         return binding.root
     }

@@ -19,7 +19,6 @@ class RegistrationFragment : Fragment() {
     private lateinit var binding: FragmentRegistrationBinding
     private val viewModel: RegistrationViewModel by activityViewModels()
 
-    // private lateinit var otp: Number
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -29,32 +28,48 @@ class RegistrationFragment : Fragment() {
         viewModel.erroeMsgLiveData.observe(viewLifecycleOwner) {
             Toast.makeText(requireActivity(), it, Toast.LENGTH_LONG).show()
         }
-       binding.otpCodeId.setOnClickListener {
-           getOtp()
+        binding.otpCodeId.setOnClickListener {
+            getOtp()
 
-       }
+        }
         binding.RegSubmitButtonId.setOnClickListener {
-
             val firstName = binding.firstNameEt.text.toString()
             val lastName = binding.lsatNameEt.text.toString()
             val userName = binding.usernameEt.text.toString()
-            val profileModel =
-                ProfileModel(firstName = firstName, lastName = lastName, userName = userName)
-
-            viewModel.insertProfile(profileModel)
-
             val email = binding.emailEt.text.toString()
             val password = binding.passwordEt.text.toString()
-
-            viewModel.registration(email, password) {
+            val retypePassword = binding.retypePasswordEt.text.toString()
+            if (password.isEmpty() || retypePassword.isEmpty() || password != retypePassword) {
                 Toast.makeText(
                     requireActivity(),
-                    "Successfually Registration Complete",
-                    Toast.LENGTH_LONG
+                    "please fill the input and write password correctly", Toast.LENGTH_LONG
                 ).show()
-                findNavController().navigate(R.id.action_registrationFragment_to_loginFragment)
 
             }
+            if (firstName.isEmpty() || lastName.isEmpty() || userName.isEmpty() || email.isEmpty()) {
+                Toast.makeText(
+                    requireActivity(),
+                    "please fill the input", Toast.LENGTH_LONG
+                ).show()
+
+            }
+            if (firstName.isNotEmpty() && lastName.isNotEmpty() && email.isNotEmpty() && userName.isNotEmpty() && password.isNotEmpty() && retypePassword.isNotEmpty() && password == retypePassword) {
+                val profileModel =
+                    ProfileModel(firstName = firstName, lastName = lastName, userName = userName)
+
+                viewModel.insertProfile(profileModel)
+
+                viewModel.registration(email, password) {
+                    Toast.makeText(
+                        requireActivity(),
+                        "Successfually Registration Complete",
+                        Toast.LENGTH_LONG
+                    ).show()
+                    findNavController().navigate(R.id.action_registrationFragment_to_loginFragment)
+
+                }
+            }
+
 
         }
 
@@ -73,8 +88,7 @@ class RegistrationFragment : Fragment() {
 
         try {
             startActivity(Intent.createChooser(mIntent, "alamin@gmail.com"))
-        }
-        catch (e: Exception){
+        } catch (e: Exception) {
             Toast.makeText(requireActivity(), e.message, Toast.LENGTH_LONG).show()
         }
 
