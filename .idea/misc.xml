@@ -4,9 +4,13 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Android Seip/MyGoogleMap/app/src/main/res/drawable/edit_text_background.xml" value="0.105" />
+        <entry key="..\:/Android Seip/MyGoogleMap/app/src/main/res/layout-land/fragment_login.xml" value="0.27569331158238175" />
         <entry key="..\:/Android Seip/MyGoogleMap/app/src/main/res/layout/activity_main.xml" value="0.19947916666666668" />
-        <entry key="..\:/Android Seip/MyGoogleMap/app/src/main/res/layout/fragment_login.xml" value="0.22" />
+        <entry key="..\:/Android Seip/MyGoogleMap/app/src/main/res/layout/activity_maps.xml" value="0.20416666666666666" />
+        <entry key="..\:/Android Seip/MyGoogleMap/app/src/main/res/layout/fragment_login.xml" value="0.2669826224328594" />
+        <entry key="..\:/Android Seip/MyGoogleMap/app/src/main/res/layout/fragment_map.xml" value="0.20416666666666666" />
         <entry key="..\:/Android Seip/MyGoogleMap/app/src/main/res/layout/fragment_registration.xml" value="0.19947916666666668" />
+        <entry key="..\:/Android Seip/MyGoogleMap/app/src/main/res/menu/main_menu.xml" value="0.19947916666666668" />
       </map>
     </option>
   </component>

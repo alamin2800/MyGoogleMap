@@ -65,7 +65,7 @@ class RegistrationFragment : Fragment() {
                         "Successfually Registration Complete",
                         Toast.LENGTH_LONG
                     ).show()
-                    findNavController().navigate(R.id.action_registrationFragment_to_loginFragment)
+                    findNavController().popBackStack()
 
                 }
             }

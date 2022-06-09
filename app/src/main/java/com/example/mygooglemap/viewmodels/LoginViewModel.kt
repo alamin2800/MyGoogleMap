@@ -34,7 +34,12 @@ class LoginViewModel():ViewModel() {
             }
     }
 
-
+    fun logout() {
+        if (user != null) {
+            fireAuth.signOut()
+            AuthLiveData.value = Auth.UNAUTHENTICATED
+        }
+    }
 }
 
 enum class Auth {

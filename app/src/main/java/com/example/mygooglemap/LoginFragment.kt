@@ -28,18 +28,25 @@ class LoginFragment : Fragment() {
 
         viewModel.AuthLiveData.observe(viewLifecycleOwner) {
             if (it == Auth.AUTHENTICATED) {
-                findNavController().navigate(R.id.action_loginFragment_to_mapFragment)
+                findNavController().popBackStack()
             }
         }
+
         viewModel.erroeMsgLiveData.observe(viewLifecycleOwner) {
             Toast.makeText(requireActivity(), it, Toast.LENGTH_LONG).show()
         }
+
         binding.submitLoginButton.setOnClickListener {
             val email = binding.usernameLoginEt.text.toString()
             val password = binding.passwordLoginEt.text.toString()
-            viewModel.login(email, password)
+            if (email.isEmpty() || password.isEmpty()) {
+                    Toast.makeText(requireActivity(), "please fill the input", Toast.LENGTH_LONG).show()
+
+            } else {
+                viewModel.login(email, password)
+
+            }
         }
-        
 
         return binding.root
     }
